@@ -1,7 +1,9 @@
 clear; clc; close all;
 
 % 定义文件名
-target_file = 'stable_data\spark_stabilized_trajectory.txt';
+project_path = 'D:\Matlab Code\video_stable\';
+file_path = 'stable_data\01_ir_shaky_stabilized_trajectory.txt';
+target_file = strcat(project_path,file_path);
 
 % 定义色彩和粗细
 color1 = '#F36E43';
@@ -68,8 +70,8 @@ figure('Name', '累计位移分析', 'Color', 'white', 'Position', [100, 100, 10
 subplot(3, 1, 1);
 plot(traj_res.frames, traj_res.x.orig, 'Color', color1, 'LineWidth', line_width1); hold on; % 半透明红色
 plot(traj_res.frames, traj_res.x.smooth, 'Color', color2, 'LineWidth', line_width2);
-title('X 轴相对位移 (帧间变化量)');
-xlabel('帧数 (Frame)'); ylabel('位移差 (px)');
+title('X 轴运动轨迹 (累积位移)');
+xlabel('帧数 (Frame)'); ylabel('位移 (px)');
 legend('Original', 'Smoothed', 'Location', 'northwest');
 grid on; xlim([min(traj_res.frames) max(traj_res.frames)]);
 
@@ -77,8 +79,8 @@ grid on; xlim([min(traj_res.frames) max(traj_res.frames)]);
 subplot(3, 1, 2);
 plot(traj_res.frames, traj_res.y.orig, 'Color', color1, 'LineWidth', line_width1); hold on;
 plot(traj_res.frames, traj_res.y.smooth, 'Color', color2, 'LineWidth', line_width2);
-title('Y 轴相对位移 (帧间变化量)');
-xlabel('帧数 (Frame)'); ylabel('位移差 (px)');
+title('Y 轴运动轨迹 (累积位移)');
+xlabel('帧数 (Frame)'); ylabel('位移 (px)');
 legend('Original', 'Smoothed', 'Location', 'northwest');
 grid on; xlim([min(traj_res.frames) max(traj_res.frames)]);
 
@@ -86,8 +88,8 @@ grid on; xlim([min(traj_res.frames) max(traj_res.frames)]);
 subplot(3, 1, 3);
 plot(traj_res.frames, traj_res.rotation.orig, 'Color', color1, 'LineWidth', line_width1); hold on;
 plot(traj_res.frames, traj_res.rotation.smooth, 'Color', color2, 'LineWidth', line_width2); % 黑色为平滑后
-title('旋转相对位移 (帧间角度变化)');
-xlabel('帧数 (Frame)'); ylabel('角度差 (deg/rad)');
+title('旋转运动轨迹 (累积角度变化)');
+xlabel('帧数 (Frame)'); ylabel('角度 (deg/rad)');
 legend('Original', 'Smoothed', 'Location', 'northwest');
 grid on; xlim([min(traj_res.frames) max(traj_res.frames)]);
 
