@@ -38,3 +38,13 @@ codegen/
 # SimBiology backup files
 *.sbproj.backup
 *.sbproj.bak
+
+# video_data
+*.avi
+*.mp4
+*.mov
+
+# folder
+stable_data
+unstable_data
+shake/output_shaky
