@@ -4,9 +4,9 @@ clear; clc;
 
 %% 1. 配置路径
 % 存放防抖后视频的文件夹 (待测视频)
-stable_folder = 'D:\Matlab Code\video_stable\stable_data\add_shake'; 
+stable_folder = 'D:\Matlab Code\video_stable\my_algo\stable_data\add_shake'; 
 % 存放原始参考视频的文件夹 (GT视频)
-ref_folder = 'D:\Matlab Code\video_stable\unstable_data\add_shake'; 
+ref_folder = 'D:\Matlab Code\video_stable\shake\cap_data'; 
 
 % 命名匹配规则：
 % 假设防抖后文件名为 "VideoA_stabilized.avi"，原始文件名为 "VideoA.avi"
