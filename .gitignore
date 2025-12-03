@@ -48,3 +48,6 @@ codegen/
 stable_data
 unstable_data
 shake/output_shaky
+my_algo
+meshflow
+opencv

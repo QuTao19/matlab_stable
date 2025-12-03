@@ -5,7 +5,7 @@ clear; clc; close all;
 %% 1. 全局配置
 % --- 路径设置 ---
 % 请修改为你的数据根目录路径
-data_folder = 'D:\Matlab Code\video_stable\stable_data\'; 
+data_folder = 'D:\Matlab Code\video_stable\my_algo\my_data\'; 
 
 % --- 参数设置 ---
 fps = 50;                 % 视频采样率

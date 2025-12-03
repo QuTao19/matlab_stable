@@ -5,14 +5,14 @@ clear; clc;
 %% --- 1. 参数配置区 ---
 
 % 防抖视频配置 (avi格式)
-stab_folder_root = 'D:\Matlab Code\video_stable\my_algo\stable_data\add_shake\rgb'; % 防抖视频文件夹路径
-stab_file_ext = '*.avi';                                                        % 防抖视频的后缀格式
-suffix_pattern = '_shaky_stabilized';                                           % 防抖文件名的特征后缀 (用于识别)
+stab_folder_root = 'D:\Matlab Code\video_stable\my_algo\my_data\ts';  % 防抖视频文件夹路径
+stab_file_ext = '*.mp4';                                                        % 防抖视频的后缀格式
+suffix_pattern = '_stabilized';                                           % 防抖文件名的特征后缀 (用于识别)
 
 % 参考视频配置 (mp4格式)
 % 如果不需要计算 SSIM，请将此变量设为 ''
-ref_folder_root = 'D:\Matlab Code\video_stable\shake\cap_data\rgb'; % 原视频文件夹路径
-ref_file_ext = '.MOV';                                          % 原视频的后缀 (注意这里不要加 *)
+ref_folder_root = ''; % 原视频文件夹路径
+ref_file_ext = '.mp4';                                          % 原视频的后缀 (注意这里不要加 *)
 
 %% --- 2. 初始化 ---
 
@@ -115,7 +115,7 @@ T = struct2table(results);
 disp(T);
 
 % 保存为 CSV
-output_csv_name = 'stabilization_evaluation_results.csv';
+output_csv_name = strcat(stab_folder_root,'\stabilization_evaluation_results.csv') ;
 try
     writetable(T, output_csv_name);
     fprintf('结果已保存至 %s\n', output_csv_name);
