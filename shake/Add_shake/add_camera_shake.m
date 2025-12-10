@@ -22,10 +22,10 @@ switch shake_type
     case 'handheld'
         % 手持: 大幅度，慢漂移，低频为主
         shake_params.max_shift_px  = 20;   % 较大的位移
-        shake_params.max_angle_deg = 1.5;  % 明显的旋转
-        shake_params.weight_jitter = 0.1; % 极少的高频抖动
-        shake_params.weight_drift  = 0.9; % 主要由低频漂移主导
-        shake_params.smooth_sec    = 0.8;  % 漂移很慢 (1.5秒的平滑窗口)
+        shake_params.max_angle_deg = 1.0;  % 明显的旋转
+        shake_params.weight_jitter = 0.05; % 极少的高频抖动
+        shake_params.weight_drift  = 0.95; % 主要由低频漂移主导
+        shake_params.smooth_sec    = 0.5;  % 
         
     case 'drone'
         % 无人机: 小幅度，高频震动 (电机嗡嗡声)，几乎无旋转
